@@ -25,7 +25,7 @@ struct projekt_anairo_23App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
         .modelContainer(sharedModelContainer)
     }
