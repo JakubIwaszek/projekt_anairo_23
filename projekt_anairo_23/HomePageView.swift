@@ -23,7 +23,7 @@ struct HomePageView: View {
                 }
                 .padding(16)
             }
-//            .background(Color.gray)
+            .background(Color.mainBackgroundColor)
             .frame(maxWidth: .infinity)
         }
     }

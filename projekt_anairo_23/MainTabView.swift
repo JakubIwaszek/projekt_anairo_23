@@ -26,6 +26,7 @@ struct MainTabView: View {
                     Text("Second")
                 }
         }
+        .toolbarBackground(Color.mainBackgroundColor, for: .automatic)
     }
 }
 

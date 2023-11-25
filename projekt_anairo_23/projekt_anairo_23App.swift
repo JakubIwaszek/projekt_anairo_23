@@ -26,6 +26,7 @@ struct projekt_anairo_23App: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
