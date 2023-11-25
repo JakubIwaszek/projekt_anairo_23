@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A949BDF2B129464005DCFD4 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A949BDE2B129464005DCFD4 /* LoginPageView.swift */; };
 		8AD988992AF570190092C290 /* projekt_anairo_23App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD988982AF570190092C290 /* projekt_anairo_23App.swift */; };
 		8AD9889B2AF570190092C290 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9889A2AF570190092C290 /* ContentView.swift */; };
 		8AD9889D2AF570190092C290 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD9889C2AF570190092C290 /* Item.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A949BDE2B129464005DCFD4 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		8AD988952AF570190092C290 /* projekt_anairo_23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projekt_anairo_23.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD988982AF570190092C290 /* projekt_anairo_23App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projekt_anairo_23App.swift; sourceTree = "<group>"; };
 		8AD9889A2AF570190092C290 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,7 +104,6 @@
 		8AD9888C2AF570190092C290 = {
 			isa = PBXGroup;
 			children = (
-				8AD988EA2B110FBB0092C290 /* Utilities.swift */,
 				8AD988972AF570190092C290 /* projekt_anairo_23 */,
 				8AD988962AF570190092C290 /* Products */,
 			);
@@ -123,8 +124,10 @@
 				8AD988E42B11064F0092C290 /* Views */,
 				8AD988982AF570190092C290 /* projekt_anairo_23App.swift */,
 				8AD988A92AF5710C0092C290 /* HomePageView.swift */,
+				8A949BDE2B129464005DCFD4 /* LoginPageView.swift */,
 				8AD9889A2AF570190092C290 /* ContentView.swift */,
 				8AD9889C2AF570190092C290 /* Item.swift */,
+				8AD988EA2B110FBB0092C290 /* Utilities.swift */,
 				8AD9889E2AF5701B0092C290 /* Assets.xcassets */,
 				8AD988A02AF5701B0092C290 /* projekt_anairo_23.entitlements */,
 				8AD988A12AF5701B0092C290 /* Preview Content */,
@@ -267,6 +270,7 @@
 				8AD988E92B1109660092C290 /* Post.swift in Sources */,
 				8AD988EB2B110FBB0092C290 /* Utilities.swift in Sources */,
 				8AD988E32B1102D00092C290 /* MainTabView.swift in Sources */,
+				8A949BDF2B129464005DCFD4 /* LoginPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

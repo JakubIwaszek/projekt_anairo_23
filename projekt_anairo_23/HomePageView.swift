@@ -25,6 +25,15 @@ struct HomePageView: View {
             }
             .background(Color.mainBackgroundColor)
             .frame(maxWidth: .infinity)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Add new post")
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
     }
 }

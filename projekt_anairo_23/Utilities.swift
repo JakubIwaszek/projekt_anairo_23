@@ -19,4 +19,8 @@ extension Color {
     public static var postBackgroundColor: Color = {
         return Color("postBackgroundColor")
     }()
+    
+    public static var loginBackgroundColor: Color = {
+        return Color("loginBackgroundColor")
+    }()
 }
