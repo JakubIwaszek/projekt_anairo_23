@@ -45,6 +45,9 @@
 		8AD988E62B11065D0092C290 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD988E52B11065D0092C290 /* PostView.swift */; };
 		8AD988E92B1109660092C290 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD988E82B1109660092C290 /* Post.swift */; };
 		8AD988EB2B110FBB0092C290 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD988EA2B110FBB0092C290 /* Utilities.swift */; };
+		8ADFA6C62B23752E00864550 /* RegisterPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA6C52B23752E00864550 /* RegisterPageView.swift */; };
+		8ADFA6C92B237AF300864550 /* RootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA6C82B237AF300864550 /* RootManager.swift */; };
+		8ADFA6CB2B237BDA00864550 /* AddNewPostPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFA6CA2B237BDA00864550 /* AddNewPostPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		8AD988E52B11065D0092C290 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		8AD988E82B1109660092C290 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8AD988EA2B110FBB0092C290 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8ADFA6C52B23752E00864550 /* RegisterPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageView.swift; sourceTree = "<group>"; };
+		8ADFA6C82B237AF300864550 /* RootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootManager.swift; sourceTree = "<group>"; };
+		8ADFA6CA2B237BDA00864550 /* AddNewPostPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPostPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +126,16 @@
 		8AD988972AF570190092C290 /* projekt_anairo_23 */ = {
 			isa = PBXGroup;
 			children = (
+				8ADFA6C72B237AC300864550 /* Supporting Files */,
 				8AD988E72B11095A0092C290 /* Models */,
 				8AD988E42B11064F0092C290 /* Views */,
 				8AD988982AF570190092C290 /* projekt_anairo_23App.swift */,
 				8AD988A92AF5710C0092C290 /* HomePageView.swift */,
 				8A949BDE2B129464005DCFD4 /* LoginPageView.swift */,
+				8ADFA6C52B23752E00864550 /* RegisterPageView.swift */,
+				8ADFA6CA2B237BDA00864550 /* AddNewPostPageView.swift */,
 				8AD9889A2AF570190092C290 /* ContentView.swift */,
 				8AD9889C2AF570190092C290 /* Item.swift */,
-				8AD988EA2B110FBB0092C290 /* Utilities.swift */,
 				8AD9889E2AF5701B0092C290 /* Assets.xcassets */,
 				8AD988A02AF5701B0092C290 /* projekt_anairo_23.entitlements */,
 				8AD988A12AF5701B0092C290 /* Preview Content */,
@@ -158,6 +166,15 @@
 				8AD988E82B1109660092C290 /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8ADFA6C72B237AC300864550 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AD988EA2B110FBB0092C290 /* Utilities.swift */,
+				8ADFA6C82B237AF300864550 /* RootManager.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +282,12 @@
 				8AD9889B2AF570190092C290 /* ContentView.swift in Sources */,
 				8AD9889D2AF570190092C290 /* Item.swift in Sources */,
 				8AD988AA2AF5710C0092C290 /* HomePageView.swift in Sources */,
+				8ADFA6C92B237AF300864550 /* RootManager.swift in Sources */,
+				8ADFA6CB2B237BDA00864550 /* AddNewPostPageView.swift in Sources */,
 				8AD988992AF570190092C290 /* projekt_anairo_23App.swift in Sources */,
 				8AD988E62B11065D0092C290 /* PostView.swift in Sources */,
 				8AD988E92B1109660092C290 /* Post.swift in Sources */,
+				8ADFA6C62B23752E00864550 /* RegisterPageView.swift in Sources */,
 				8AD988EB2B110FBB0092C290 /* Utilities.swift in Sources */,
 				8AD988E32B1102D00092C290 /* MainTabView.swift in Sources */,
 				8A949BDF2B129464005DCFD4 /* LoginPageView.swift in Sources */,

@@ -1,32 +1,29 @@
 //
-//  LoginPageView.swift
+//  RegisterPageView.swift
 //  projekt_anairo_23
 //
-//  Created by Jakub Iwaszek on 25/11/2023.
+//  Created by Przemysław Szwajcowski on 08/12/2023.
 //
 
 import SwiftUI
 
-struct LoginPageView: View {
-    @EnvironmentObject private var appRootManager: RootManager
+struct RegisterPageView: View {
     @State private var login = ""
     @State private var password = ""
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                logo
-                Spacer()
-                textFieldsView
-                Spacer()
-                    .padding(.bottom, 30)
-                buttonsView
-            }
-            .scrollBounceBehavior(.basedOnSize)
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.loginBackgroundColor)
+        ScrollView {
+            logo
+            Spacer()
+            textFieldsView
+            Spacer()
+                .padding(.bottom, 30)
+            buttonsView
         }
+        .scrollBounceBehavior(.basedOnSize)
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.loginBackgroundColor)
     }
     
     private var logo: some View {
@@ -62,24 +59,9 @@ struct LoginPageView: View {
     private var buttonsView: some View {
         VStack {
             Button {
-                // TODO: Modify this, this is a demo
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(.spring()) {
-                        appRootManager.currentRoot = .home
-                    }
-                }
+                print("create an account")
             } label: {
-                Text("Log In")
-                    .foregroundStyle(Color.white)
-            }
-            .padding(12)
-            .frame(width: 200)
-            .background(Color.mainBackgroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            NavigationLink {
-                RegisterPageView()
-            } label: {
-                Text("Sign Up")
+                Text("Create an account")
                     .foregroundStyle(Color.white)
             }
             .padding(12)
@@ -91,5 +73,5 @@ struct LoginPageView: View {
 }
 
 #Preview {
-    LoginPageView()
+    RegisterPageView()
 }

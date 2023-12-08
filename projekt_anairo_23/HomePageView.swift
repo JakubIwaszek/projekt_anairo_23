@@ -27,8 +27,8 @@ struct HomePageView: View {
             .frame(maxWidth: .infinity)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        print("Add new post")
+                    NavigationLink {
+                        AddNewPostPageView()
                     } label: {
                         Image(systemName: "plus")
                     }

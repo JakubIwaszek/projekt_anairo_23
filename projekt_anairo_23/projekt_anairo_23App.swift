@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct projekt_anairo_23App: App {
+    @StateObject private var appRootManager = RootManager()
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,9 +26,17 @@ struct projekt_anairo_23App: App {
 
     var body: some Scene {
         WindowGroup {
-//            MainTabView()
-            LoginPageView()
-                .preferredColorScheme(.dark)
+            Group {
+                switch appRootManager.currentRoot {
+                case .home:
+                    HomePageView()
+                        .preferredColorScheme(.dark)
+                case .authentication:
+                    LoginPageView()
+                        .preferredColorScheme(.dark)
+                }
+            }
+            .environmentObject(appRootManager)
         }
         .modelContainer(sharedModelContainer)
     }
