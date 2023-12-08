@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LoginPageView: View {
     @EnvironmentObject private var appRootManager: RootManager
-    @State private var login = ""
-    @State private var password = ""
+    @StateObject private var viewModel = LoginPageViewModel()
     
     var body: some View {
         NavigationStack {
@@ -26,6 +25,13 @@ struct LoginPageView: View {
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color.loginBackgroundColor)
+            .alert(viewModel.alert.message, isPresented: $viewModel.alert.isPresented) {
+                Button {
+                    print("ok")
+                } label: {
+                    Text("Ok")
+                }
+            }
         }
     }
     
@@ -37,7 +43,7 @@ struct LoginPageView: View {
     
     private var textFieldsView: some View {
         VStack {
-            TextField(text: $login) {
+            TextField(text: $viewModel.login) {
                 Text("Login")
                     .foregroundStyle(Color.gray)
             }
@@ -47,7 +53,7 @@ struct LoginPageView: View {
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.bottom, 6)
-            SecureField(text: $password) {
+            SecureField(text: $viewModel.password) {
                 Text("Password")
                     .foregroundStyle(Color.gray)
             }
@@ -62,20 +68,22 @@ struct LoginPageView: View {
     private var buttonsView: some View {
         VStack {
             Button {
-                // TODO: Modify this, this is a demo
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(.spring()) {
-                        appRootManager.currentRoot = .home
+                viewModel.signIn { success in
+                    if success {
+                        withAnimation(.spring()) {
+                            appRootManager.currentRoot = .home
+                        }
                     }
                 }
             } label: {
                 Text("Log In")
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(viewModel.validateFields() ? Color.white : Color.gray)
             }
             .padding(12)
             .frame(width: 200)
             .background(Color.mainBackgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: 10))
+            .disabled(!viewModel.validateFields())
             NavigationLink {
                 RegisterPageView()
             } label: {

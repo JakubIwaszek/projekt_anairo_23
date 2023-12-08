@@ -10,7 +10,9 @@ import SwiftData
 
 @main
 struct projekt_anairo_23App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var appRootManager = RootManager()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
