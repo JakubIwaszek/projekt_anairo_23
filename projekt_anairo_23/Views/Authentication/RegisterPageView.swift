@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RegisterPageView: View {
-    @State private var login = ""
-    @State private var password = ""
+    @StateObject private var viewModel = RegisterPageViewModel()
+    @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         ScrollView {
@@ -18,12 +18,25 @@ struct RegisterPageView: View {
             textFieldsView
             Spacer()
                 .padding(.bottom, 30)
-            buttonsView
+            buttonView
         }
         .scrollBounceBehavior(.basedOnSize)
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.loginBackgroundColor)
+        .alert(viewModel.alert.message, isPresented: $viewModel.alert.isPresented) {
+            Button {
+                if viewModel.alert.shouldDismissView {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            } label: {
+                if viewModel.alert.shouldDismissView {
+                    Text("Dismiss")
+                } else {
+                    Text("Ok")
+                }
+            }
+        }
     }
     
     private var logo: some View {
@@ -34,8 +47,8 @@ struct RegisterPageView: View {
     
     private var textFieldsView: some View {
         VStack {
-            TextField(text: $login) {
-                Text("Login")
+            TextField(text: $viewModel.login) {
+                Text("Provide your email")
                     .foregroundStyle(Color.gray)
             }
             .padding(12)
@@ -44,8 +57,8 @@ struct RegisterPageView: View {
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.bottom, 6)
-            SecureField(text: $password) {
-                Text("Password")
+            SecureField(text: $viewModel.password) {
+                Text("Provide your password")
                     .foregroundStyle(Color.gray)
             }
             .padding(12)
@@ -56,18 +69,19 @@ struct RegisterPageView: View {
         }
     }
     
-    private var buttonsView: some View {
+    private var buttonView: some View {
         VStack {
             Button {
-                print("create an account")
+                viewModel.createUserAccount()
             } label: {
                 Text("Create an account")
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(viewModel.validateFields() ? Color.white : Color.gray)
             }
             .padding(12)
             .frame(width: 200)
             .background(Color.mainBackgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: 10))
+            .disabled(!viewModel.validateFields())
         }
     }
 }
